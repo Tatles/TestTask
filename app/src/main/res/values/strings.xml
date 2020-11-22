@@ -3,4 +3,5 @@
     <string name="read_more">Read more:</string>
     <string name="no_internet">Slow or no internet connection.\nPlease check your internet settings</string>
     <string name="btn_no_internet">Retry</string>
+    <string name="news">News</string>
 </resources>
