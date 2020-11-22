@@ -13,7 +13,7 @@ class MainPresenter(private var newsApiService: NewsApi) : MvpPresenter<MainView
     var isNewsExists = false
     fun onRefresh() {
         page = 1
-        this.newsApiService.getNews(page = page)
+        newsApiService.getNews(page = page)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({
@@ -30,7 +30,7 @@ class MainPresenter(private var newsApiService: NewsApi) : MvpPresenter<MainView
         if (!isLoading) {
             isLoading = true
             page++
-            this.newsApiService.getNews(page = page)
+            newsApiService.getNews(page = page)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({
