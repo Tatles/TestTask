@@ -1,6 +1,6 @@
 package kakurin.testtask.data.model
 
-data class New(
+data class Article(
     val author: String,
     val title: String,
     val description: String,

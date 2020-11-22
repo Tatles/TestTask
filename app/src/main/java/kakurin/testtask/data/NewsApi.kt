@@ -8,7 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-interface RetrofitImpl {
+interface NewsApi {
     @GET("everything")
     fun getNews(
         @Query("apiKey") apiKey: String = "e7a4d3493ec84a1a9232789bf7a943cf",
@@ -18,15 +18,14 @@ interface RetrofitImpl {
     ): Single<News>
 
     companion object Factory {
-        fun create(): RetrofitImpl {
+        fun create(): NewsApi {
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl("https://newsapi.org/v2/")
                 .build()
 
-            return retrofit.create(RetrofitImpl::class.java)
+            return retrofit.create(NewsApi::class.java)
         }
     }
-
 }

@@ -1,5 +1,5 @@
 package kakurin.testtask.data.model
 
 data class News (
-    val articles: List<New>
+    val articles: List<Article>
 )
